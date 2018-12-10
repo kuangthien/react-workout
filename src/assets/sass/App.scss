@@ -8,9 +8,9 @@ $border-radius-sm: 0.1rem !default;
 // Import Bootstrap and its default variables
 @import './././node_modules/bootstrap/scss/bootstrap.scss';
 
-.container {
-    max-width: 1440px;
-}
+ .container-fluid {
+     max-width: 1440px;
+ }
 .home-landing {
     .img {
         left: 0;
@@ -34,7 +34,7 @@ $border-radius-sm: 0.1rem !default;
 
 .article-detail {
     .content {
-        font-size: calc(1rem + 8 * ((100vw - 320px) / 1440));
+        font-size: 1.2rem
     }
 }
 .article-item {

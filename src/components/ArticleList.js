@@ -50,7 +50,7 @@ class ArticleList extends Component {
     render() {
         return (
             <div className="articleList my-4">
-                <div className="container">
+                <div className="container-fluid">
                     <div className="row">
                         {this.DATA.map((v, i) => {
                             return (

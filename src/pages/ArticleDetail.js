@@ -16,38 +16,40 @@ class ArticleDetail extends Component {
             <div className="my-4 article-detail">
                 <div className="container">
                     <div className="row">
-                        <div className="col-12 col-sm-6 col-md-8">
-                            <div className="d-flex align-items-center justify-content-start   h-100">
-                                <div>
-                                    <h1 className="heading my-4">
-                                        {article.title}
-                                    </h1>
-                                    <div className="meta">
-                                        <p className="text-muted">
-                                            {new moment(
-                                                article.publishDate,
-                                                'YYYY-MM-DDTHH:mm Z'
-                                            ).format('MMM DD')}
-                                        </p>
+                        <div className="col-12 col-lg-4  ">
+                            <div className="row">
+                                <div className="col-12  col-md-8 col-lg-12">
+                                    <div className="d-flex align-items-center justify-content-start   h-100">
+                                        <div className="text-lg-center">
+                                            <h1 className="h2 my-4">
+                                                {article.title}
+                                            </h1>
+                                            <div className="meta">
+                                                <p className="text-muted">
+                                                    {new moment(
+                                                        article.publishDate,
+                                                        'YYYY-MM-DDTHH:mm Z'
+                                                    ).format('MMM DD')}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-12 col-md-4 col-lg-12">
+                                    <div className="d-flex align-items-center justify-content-start   h-100">
+                                        <img
+                                            src={article.imageUrl}
+                                            alt=""
+                                            height="auto"
+                                            minheight="100%"
+                                            width="100%"
+                                            className="bg-dark"
+                                        />
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-12 col-sm-6 col-md-4">
-                            <div className="d-flex align-items-center justify-content-start   h-100">
-                                <img
-                                    src={article.imageUrl}
-                                    alt=""
-                                    height="auto"
-                                    minheight="100%"
-                                    width="100%"
-                                    className="bg-dark"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-12">
+                        <div className="col-12 col-lg-8">
                             <div className="content my-4">
                                 {article.content}
                             </div>
