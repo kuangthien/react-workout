@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './App.scss';
+// for hot reload
+import './assets/sass/App.scss';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './Home';
 class App extends Component {
