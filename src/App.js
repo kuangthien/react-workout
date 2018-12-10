@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 import './assets/sass/App.scss';
 import { Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Top from './containers/Top';
-import Footer from './containers/Footer';
+import Top from './components/Top';
+import Footer from './components/Footer';
 import ArticleDetail from './pages/ArticleDetail';
+import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
 
 class App extends Component {
     render() {
@@ -15,6 +17,8 @@ class App extends Component {
                 <div className="my-4">
                     <Route path="/" exact component={Home} />
                     <Route path="/article/:id" component={ArticleDetail} />
+                    <Route path="/about-us" component={AboutUs} />
+                    <Route path="/contact-us" component={ContactUs} />
                 </div>
                 <Footer />
             </div>
