@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import ArticleDetail from './pages/ArticleDetail';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
+import Articles from './pages/Articles';
 
 class App extends Component {
     render() {
@@ -17,6 +18,7 @@ class App extends Component {
                 <div className="my-4">
                     <Route path="/" exact component={Home} />
                     <Route path="/article/:id" component={ArticleDetail} />
+                    <Route path="/articles" component={Articles} />
                     <Route path="/about-us" component={AboutUs} />
                     <Route path="/contact-us" component={ContactUs} />
                 </div>

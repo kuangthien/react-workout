@@ -55,7 +55,7 @@ class ArticleList extends Component {
                         {this.DATA.map((v, i) => {
                             return (
                                 <React.Fragment key={v._id}>
-                                    <div class="col-md-3">
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
                                         {
                                             <Article
                                                 article={v}
