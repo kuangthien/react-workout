@@ -6,7 +6,7 @@ import articleList from './../data/article-list.json';
 import { withRouter } from 'react-router-dom';
 
 const Article = props => {
-    const { article } = props;
+    const { article, goToDetail } = props;
     return (
         <div className="card mb-4 box-shadow border-0 article-item">
             <div className="card-img-top" alt="">
@@ -29,7 +29,16 @@ const Article = props => {
                         ).format('MMM DD')}
                     </small>
                 </div>
-                <a className="link" href="#">&nbsp;</a>
+                <a
+                    href={`/article/${article._id}`}
+                    onClick={e => {
+                        e.preventDefault();
+                        goToDetail();
+                    }}
+                    className="link"
+                >
+                    &nbsp;
+                </a>
             </div>
         </div>
     );
@@ -46,8 +55,17 @@ class ArticleList extends Component {
                         {this.DATA.map((v, i) => {
                             return (
                                 <React.Fragment key={v._id}>
-                                    <div className="col-md-3">
-                                        {<Article article={v} />}
+                                    <div class="col-md-3">
+                                        {
+                                            <Article
+                                                article={v}
+                                                goToDetail={() =>
+                                                    this.props.history.push(
+                                                        `/article/${v._id}`
+                                                    )
+                                                }
+                                            />
+                                        }
                                     </div>
                                 </React.Fragment>
                             );
