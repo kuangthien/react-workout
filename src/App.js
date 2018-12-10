@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 // for hot reload
 import './assets/sass/App.scss';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from './Home';
+import { Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Top from './containers/Top';
+
 class App extends Component {
     render() {
         return (
-            <Router>
-                <Route path="/Home" component={Home} />
-            </Router>
+            <div>
+                <Top />
+                <div className="my-4">
+                    <Route path="/" exact component={Home} />
+                </div>
+            </div>
         );
     }
 }
