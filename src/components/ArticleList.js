@@ -26,7 +26,7 @@ const Article = props => {
                         {new moment(
                             article.publishDate,
                             'YYYY-MM-DDTHH:mm Z'
-                        ).format('MMM DD')}
+                        ).format('MMM DD YYYY')}
                     </small>
                 </div>
                 <a
@@ -45,29 +45,56 @@ const Article = props => {
 };
 
 class ArticleList extends Component {
-    DATA = Array.from(articleList).slice(0, this.props.limit || 20);
+    compareMoment = (a, b) => {
+        const momentA = moment(a.publishDate, 'YYYY-MM-DDTHH:mm:ss Z');
+        const momentB = moment(b.publishDate, 'YYYY-MM-DDTHH:mm:ss Z');
+        return momentA.isAfter(momentB) ? 1 : -1;
+    };
 
     render() {
+        let displayData = [];
+        const { sortBy } = this.props;
+
+        if (sortBy) {
+            displayData = Array.from(articleList).sort((a, b) => {
+                let rs;
+                if (sortBy === 'newest') {
+                    rs = this.compareMoment(a, b);
+                } else if (sortBy === 'oldest') {
+                    rs = this.compareMoment(b, a);
+                } else {
+                    rs = 0;
+                }
+                return rs;
+            });
+        } else {
+            displayData = Array.from(articleList).slice(
+                0,
+                this.props.limit || 20
+            );
+        }
+
         return (
             <div className="articleList my-4">
                 <div className="container-fluid">
                     <div className="row">
-                        {this.DATA.map((v, i) => {
+                        {displayData.map((v, i) => {
                             return (
-                                <React.Fragment key={v._id}>
-                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                        {
-                                            <Article
-                                                article={v}
-                                                goToDetail={() =>
-                                                    this.props.history.push(
-                                                        `/article/${v._id}`
-                                                    )
-                                                }
-                                            />
-                                        }
-                                    </div>
-                                </React.Fragment>
+                                <div
+                                    className="col-lg-3 col-md-4 col-sm-6"
+                                    key={v._id}
+                                >
+                                    {
+                                        <Article
+                                            article={v}
+                                            goToDetail={() =>
+                                                this.props.history.push(
+                                                    `/article/${v._id}`
+                                                )
+                                            }
+                                        />
+                                    }
+                                </div>
                             );
                         })}
                     </div>

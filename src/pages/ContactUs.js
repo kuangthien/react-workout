@@ -7,7 +7,6 @@ export default class AboutUs extends Component {
                 <h1> Contact Us </h1>
                 <div className="row">
                     <div className="col-sm-6  ">
-                        {' '}
                         <div className="content">
                             <div class="form-group">
                                 <label for="firstName">Name</label>
@@ -30,7 +29,9 @@ export default class AboutUs extends Component {
                                 />
                             </div>
 
-                            <button className="btn btn-primary mb-4">Done</button>
+                            <button className="btn btn-primary mb-4">
+                                Done
+                            </button>
                         </div>
                     </div>
                     <div className="col-sm-6  ">
@@ -39,7 +40,8 @@ export default class AboutUs extends Component {
                             width="100%"
                             height="100%"
                             frameborder="0"
-                            allowfullscreen=""
+                            allowfullscreen="true"
+                            title="Map"
                         />
                     </div>
                 </div>
