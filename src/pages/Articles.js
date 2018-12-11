@@ -17,10 +17,7 @@ class Articles extends Component {
             <div className="">
                 <div className=" container-fluid text-center ">
                     <label>
-                        <select
-                            onChange={this.handleSelectChange}
-                            className="form-control form-control-lg"
-                        >
+                        <select onChange={this.handleSelectChange} className="form-control form-control-lg">
                             <option disabled="disabled">Sort by</option>
                             <option value="newest">Newest</option>
                             <option value="oldest">Oldest</option>

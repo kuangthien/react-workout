@@ -4,6 +4,8 @@ import './assets/sass/App.scss';
 import { Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Top from './components/Top';
+import HomeLanding from './components/HomeLanding';
+
 import Footer from './components/Footer';
 import ArticleDetail from './pages/ArticleDetail';
 import AboutUs from './pages/AboutUs';
@@ -15,6 +17,7 @@ class App extends Component {
         return (
             <div>
                 <Top />
+                <Route path="/" exact component={HomeLanding} />
                 <div className="my-4">
                     <Route path="/" exact component={Home} />
                     <Route path="/article/:id" component={ArticleDetail} />

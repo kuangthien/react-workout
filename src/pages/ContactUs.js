@@ -10,28 +10,14 @@ export default class AboutUs extends Component {
                         <div className="content">
                             <div class="form-group">
                                 <label for="firstName">Name</label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="firstName"
-                                    placeholder=""
-                                    required=""
-                                />
+                                <input type="text" class="form-control" id="firstName" placeholder="" required="" />
                             </div>
                             <div class="form-group">
                                 <label for="lastName">Message</label>
-                                <textarea
-                                    type="text"
-                                    class="form-control"
-                                    id="lastName"
-                                    placeholder=""
-                                    required=""
-                                />
+                                <textarea type="text" class="form-control" id="lastName" placeholder="" required="" />
                             </div>
 
-                            <button className="btn btn-primary mb-4">
-                                Done
-                            </button>
+                            <button className="btn btn-primary mb-4">Done</button>
                         </div>
                     </div>
                     <div className="col-sm-6  ">

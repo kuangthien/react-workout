@@ -23,10 +23,7 @@ const Article = props => {
                 <p className="card-text">{article.desc}</p>
                 <div className=" text-right">
                     <small className="text-muted">
-                        {new moment(
-                            article.publishDate,
-                            'YYYY-MM-DDTHH:mm Z'
-                        ).format('MMM DD YYYY')}
+                        {new moment(article.publishDate, 'YYYY-MM-DDTHH:mm Z').format('MMM DD YYYY')}
                     </small>
                 </div>
                 <a
@@ -68,10 +65,7 @@ class ArticleList extends Component {
                 return rs;
             });
         } else {
-            displayData = Array.from(articleList).slice(
-                0,
-                this.props.limit || 20
-            );
+            displayData = Array.from(articleList).slice(0, this.props.limit || 20);
         }
 
         return (
@@ -80,18 +74,11 @@ class ArticleList extends Component {
                     <div className="row">
                         {displayData.map((v, i) => {
                             return (
-                                <div
-                                    className="col-lg-3 col-md-4 col-sm-6"
-                                    key={v._id}
-                                >
+                                <div className="col-lg-3 col-md-4 col-sm-6" key={v._id}>
                                     {
                                         <Article
                                             article={v}
-                                            goToDetail={() =>
-                                                this.props.history.push(
-                                                    `/article/${v._id}`
-                                                )
-                                            }
+                                            goToDetail={() => this.props.history.push(`/article/${v._id}`)}
                                         />
                                     }
                                 </div>
